@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>A web page that points a browser to a different page after 0 seconds</title>
+<meta http-equiv="refresh" content="0; main.html">
+<script src="jquery-3.3.1.min.js"></script>
+    <style>
+    .content {
+    	display:none;
+    }
+
+    .preload {
+    	margin:0;
+    	position:absolute;
+    	top:50%;
+    	left:50%;
+    	margin-right: -50%;
+    	transform:translate(-50%, -50%);
+    }
+    </style>
+<meta name="keywords" content="automatic redirection">
+</head>
+<body>
+<div class="preload">
+    	<img src="loading_spinner.gif" />
+  </div>
+  
+If your browser doesn't automatically go there within a few seconds, 
+you may want to go to 
+    <a href="main.html/"><strong>the destination</strong></a> 
+manually.
+
+<script>
+    	$(function() {
+    		$(".preload").fadeOut(2000, function() {
+    			$(".content").fadeIn(1000);
+    		});
+    	});
+    </script>
+</body>
+</html>
